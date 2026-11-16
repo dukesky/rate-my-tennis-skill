@@ -1,0 +1,37 @@
+name: Feedback on a report / 使用反馈
+description: Tell us how the report turned out - what was right, what was wrong, what was missing. 说说报告准不准、哪里不好用。
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you run it? / 在哪里用的？
+      options:
+        - Claude app (claude.ai / mobile / desktop)
+        - Claude Code
+        - ChatGPT
+        - Other / 其他
+    validations:
+      required: true
+  - type: input
+    id: footage
+    attributes:
+      label: What was the video? / 视频内容
+      description: e.g. wall practice from behind, 2 min · 例如：对墙练习，身后机位，2 分钟
+  - type: textarea
+    id: right
+    attributes:
+      label: What did it get right? / 哪些说得准？
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What was wrong, confusing or missing? / 哪些不准、看不懂或缺了什么？
+      description: If it failed, paste what the assistant said went wrong. 如果没跑通，把 AI 的报错贴上来。
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else / 其他想法
+      description: Screenshots welcome (blur faces if you like). 欢迎贴截图。

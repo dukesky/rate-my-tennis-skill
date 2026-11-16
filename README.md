@@ -15,6 +15,8 @@ has this skill, and get back:
 - **progress tracking**: send your next video together with the small `tennis-progress.json` and the report shows
   what changed
 
+![The fix shown on the player's own frame: red is now, green swings to the target](docs/img/demo.gif)
+
 ![Report overview: score, level, skill radar and per-stroke ratings](docs/img/report-overview.jpg)
 
 Each fix is drawn on your own frames, red for now and green for the target, and animates between the two:
@@ -145,6 +147,17 @@ chatgpt/instructions.md       Custom GPT / Project instructions
 scripts/package.sh            builds dist/
 ```
 
+## Feedback
+
+Tried it? Please tell us how it went: it is the fastest way to make the reports better.
+
+- **[Leave feedback](https://github.com/dukesky/rate-my-tennis-skill/issues/new?template=feedback.yml)**: what the
+  report got right, what it got wrong, what was missing (a short form, 中文也可以).
+- **[Share your report or ask a question](https://github.com/dukesky/rate-my-tennis-skill/discussions)** in Discussions.
+- **[Report a bug](https://github.com/dukesky/rate-my-tennis-skill/issues/new?template=bug.yml)** if it crashed or could not finish.
+
+If it was useful, a ⭐ helps other players find it.
+
 ## Contributing
 
 Ideas that would help most: reference checkpoints for more strokes and levels, more languages, a pose backend
@@ -183,5 +196,7 @@ skill 的 AI 助手，它会像教练一样看完视频，给你一份图文并�
   ChatGPT 装不了姿态模型，会降级为“纯目测模式”，结果比 Claude 粗糙。
 
 **录像建议**：手机固定、横屏、全身入镜、从身后拍（有条件再加一段侧面）、尽量 60 帧、保留声音、1–3 分钟、每种击球 8–10 次。
+
+**反馈**：用完欢迎[填个简短的反馈表](https://github.com/dukesky/rate-my-tennis-skill/issues/new?template=feedback.yml)（中文即可），或者到 [Discussions](https://github.com/dukesky/rate-my-tennis-skill/discussions) 晒报告、提问。觉得有用的话点个 ⭐。
 
 **局限**：单机位估计的角度有误差（约 ±10°），NTRP 只是基于动作的估计；AI 报告不能替代现场教练，也不是医疗建议。
