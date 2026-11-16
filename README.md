@@ -21,9 +21,9 @@ Each fix is drawn on your own frames, red for now and green for the target, and 
 
 ![One issue card: annotated frames, what we see, why it matters, how to fix it, cue and drills](docs/img/report-issue.jpg)
 
-**Example reports** (real output from a three-minute wall-practice video; download the HTML and open it in a
-browser): [English](docs/examples/wall-practice-en/report.html) ·
-[中文](docs/examples/wall-practice-zh/report.html). The `report.json` beside each one is what the assistant wrote.
+**Live example reports** (real output from a three-minute wall-practice video):
+[English](https://dukesky.github.io/rate-my-tennis-skill/examples/wall-practice-en/report.html) ·
+[中文](https://dukesky.github.io/rate-my-tennis-skill/examples/wall-practice-zh/report.html). The `report.json` beside each one is what the assistant wrote.
 
 The report is a single self-contained HTML file (works offline, prints to PDF). Reports are written in the
 language you talk to the assistant in (English and Chinese labels are built in).
@@ -159,7 +159,7 @@ skill 的 AI 助手，它会像教练一样看完视频，给你一份图文并�
 - 你的挥拍**慢动作**（可拖动逐帧看）、训练计划、测量数据
 - **进步追踪**：下次把新视频和上次生成的 `tennis-progress.json` 一起上传，报告会显示各项分数的变化
 
-**样例报告**（一段三分钟对墙练习视频的真实输出，下载 HTML 后用浏览器打开）：[中文](docs/examples/wall-practice-zh/report.html) · [English](docs/examples/wall-practice-en/report.html)。
+**在线样例报告**（一段三分钟对墙练习视频的真实输出）：[中文](https://dukesky.github.io/rate-my-tennis-skill/examples/wall-practice-zh/report.html) · [English](https://dukesky.github.io/rate-my-tennis-skill/examples/wall-practice-en/report.html)。
 
 报告是一个独立的 HTML 文件，可离线打开、可打印成 PDF。你用什么语言和助手说话，报告就用什么语言。
 
