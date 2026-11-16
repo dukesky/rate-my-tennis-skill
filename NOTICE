@@ -1,0 +1,9 @@
+Rate My Tennis
+Copyright (c) 2026 Rate My Tennis contributors. Licensed under the MIT License (see LICENSE).
+
+Third-party components
+
+skill/rate-my-tennis/assets/pose_landmarker_full.task
+  MediaPipe Pose Landmarker model, (c) Google LLC, distributed under the Apache License 2.0.
+  https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker
+  https://www.apache.org/licenses/LICENSE-2.0

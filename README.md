@@ -115,7 +115,7 @@ scripts/package.sh            builds dist/
 Ideas that would help most: reference checkpoints for more strokes and levels, more languages, a pose backend
 for sandboxes without MediaPipe, ball and racket tracking, doubles/match-play analysis. Issues and PRs welcome.
 
-MIT licensed. The bundled pose model is © Google, Apache-2.0.
+MIT licensed. The bundled pose model is © Google, Apache-2.0 (see [NOTICE](NOTICE)).
 
 ---
 
