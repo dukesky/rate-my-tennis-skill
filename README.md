@@ -71,15 +71,20 @@ Settings → Capabilities → Skills (code execution must be on). Then attach a 
 
 ### ChatGPT
 
-ChatGPT cannot install it from a link either. Download **`rate-my-tennis-chatgpt.zip`** from the
-[latest release](https://github.com/dukesky/rate-my-tennis-skill/releases/latest), unzip it, create a Custom GPT
-(or a Project) with **Code Interpreter** enabled, paste the contents of `INSTRUCTIONS-paste-into-GPT.md` into
-Instructions, and upload the remaining files as Knowledge. Once built, a Custom GPT can be shared by link so
-others do not have to set anything up.
+ChatGPT cannot install it from a link, but no setup is needed either. Download **`rate-my-tennis-chatgpt.zip`**
+from the [latest release](https://github.com/dukesky/rate-my-tennis-skill/releases/latest), attach the zip and
+your video to a normal chat, and say:
 
-ChatGPT's sandbox has no internet, so the `mediapipe` pose model usually cannot be installed there. The skill
-then runs in **motion-only mode**: the assistant picks the swings from a contact sheet by eye and annotates by
-coordinates. You still get the full report, without measured angles and with somewhat rougher overlays.
+> Unzip the toolkit, read INSTRUCTIONS-paste-into-GPT.md and SKILL.md, and follow the SKILL.md workflow to
+> analyse my tennis video. I am right-handed with a two-handed backhand.
+
+(Tested on ChatGPT Plus, November 2026: about six minutes for a 45-second clip.) To avoid re-uploading the zip
+every time, put the same files into a Custom GPT or a Project instead; `INSTRUCTIONS-paste-into-GPT.md` says how.
+
+**What to expect on ChatGPT:** its sandbox has no internet, so the pose model cannot be installed and the skill
+runs in **motion-only mode**. You still get the full report (scores, annotated frames, drills, slow motion,
+progress file), but there are no measured angles, the player is not zoomed in, and the overlays are placed by
+eye, so the analysis is rougher than on Claude. Tell it your racket hand and backhand type up front.
 
 ### Other agents
 
@@ -162,9 +167,10 @@ skill 的 AI 助手，它会像教练一样看完视频，给你一份图文并�
 - Claude Code：一行命令 `/plugin install rate-my-tennis --marketplace dukesky/rate-my-tennis-skill`，或者直接把本仓库链接发给它让它安装。
 - Claude 聊天应用：不能通过链接安装。从 [最新 Release](https://github.com/dukesky/rate-my-tennis-skill/releases/latest) 下载
   `rate-my-tennis.zip`，在 Settings → Capabilities → Skills 上传（需开启代码执行）。
-- ChatGPT：同样不能通过链接安装。下载 `rate-my-tennis-chatgpt.zip` 解压，新建 Custom GPT 或 Project，开启 Code Interpreter，
-  把 `INSTRUCTIONS-paste-into-GPT.md` 的内容粘贴到 Instructions，其余文件作为 Knowledge 上传。（ChatGPT 沙盒通常装不了姿态模型，
-  会自动降级为“纯目测模式”，仍能出完整报告，但没有角度数据。）
+- ChatGPT：不能通过链接安装，但也不需要配置。下载 `rate-my-tennis-chatgpt.zip`，在普通对话里把 zip 和视频一起上传，说
+  “解压工具包，先读 INSTRUCTIONS-paste-into-GPT.md 和 SKILL.md，按 SKILL.md 的流程分析我的网球视频，我是右手持拍、双手反拍”
+  即可（已在 ChatGPT Plus 上实测，45 秒视频约 6 分钟）。ChatGPT 沙盒装不了姿态模型，会自动降级为“纯目测模式”：
+  仍能出完整报告，但没有角度数据，画面不会放大到人，标注靠目测，比在 Claude 上粗糙。
 
 **录像建议**：手机固定、横屏、全身入镜、从身后拍（有条件再加一段侧面）、尽量 60 帧、保留声音、1–3 分钟、每种击球 8–10 次。
 
