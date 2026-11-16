@@ -1,0 +1,25 @@
+{
+  "name": "rate-my-tennis",
+  "owner": {
+    "name": "dukesky",
+    "url": "https://github.com/dukesky"
+  },
+  "metadata": {
+    "description": "Turn a tennis video into an illustrated coaching report, in your coding agent.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rate-my-tennis",
+      "source": "./plugins/rate-my-tennis",
+      "description": "Upload a tennis video, get an illustrated coaching report: overall score, skill radar, estimated NTRP level, annotated frames with animated corrections, drills, and progress tracking. Runs locally in your agent; no API keys.",
+      "version": "0.1.0",
+      "author": {
+        "name": "dukesky",
+        "url": "https://github.com/dukesky"
+      },
+      "license": "MIT",
+      "keywords": ["tennis", "sports", "coaching", "video-analysis", "pose-estimation", "technique"]
+    }
+  ]
+}

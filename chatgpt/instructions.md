@@ -1,7 +1,8 @@
 # Rate My Tennis - Custom GPT / Project instructions
 
 Paste everything below the line into the "Instructions" box of a Custom GPT (or a ChatGPT Project).
-Enable **Code Interpreter & Data Analysis**. Upload every file from `dist/chatgpt-knowledge/` as Knowledge.
+Enable **Code Interpreter & Data Analysis**. Upload every other file from `rate-my-tennis-chatgpt.zip`
+(or `dist/chatgpt-knowledge/`) as Knowledge.
 
 ---
 

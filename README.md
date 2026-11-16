@@ -41,23 +41,31 @@ Everything runs locally in the assistant's code sandbox; the video is not sent t
 
 ## Install
 
-Build the packages (or grab them from Releases):
+### Claude Code (one line)
 
-```bash
-./scripts/package.sh
+```
+/plugin install rate-my-tennis --marketplace dukesky/rate-my-tennis-skill
 ```
 
-### Claude (claude.ai, Claude desktop, Claude Code)
+(Claude Code 2.1.275 or later. On older versions: `/plugin marketplace add dukesky/rate-my-tennis-skill`, then
+`/plugin install rate-my-tennis@rate-my-tennis`.) Or simply give Claude Code this repository's link and ask it
+to install the skill.
 
-- **Claude apps:** Settings → Capabilities → Skills → upload `dist/rate-my-tennis.zip`. Code execution must be on.
-- **Claude Code:** unzip into `~/.claude/skills/` (or a project's `.claude/skills/`).
+Then point it at a video: *"rate my tennis: ~/Videos/forehand.mov"*.
 
-Then: attach a video and say *"rate my tennis"*.
+### Claude apps (claude.ai, desktop, mobile)
+
+Chat apps cannot install a skill from a link. Download **`rate-my-tennis.zip`** from the
+[latest release](https://github.com/dukesky/rate-my-tennis-skill/releases/latest) and upload it under
+Settings → Capabilities → Skills (code execution must be on). Then attach a video and say *"rate my tennis"*.
 
 ### ChatGPT
 
-Create a Custom GPT (or a Project) with **Code Interpreter** enabled, paste `dist/chatgpt-instructions.md` into
-Instructions, and upload the files in `dist/chatgpt-knowledge/` as Knowledge.
+ChatGPT cannot install it from a link either. Download **`rate-my-tennis-chatgpt.zip`** from the
+[latest release](https://github.com/dukesky/rate-my-tennis-skill/releases/latest), unzip it, create a Custom GPT
+(or a Project) with **Code Interpreter** enabled, paste the contents of `INSTRUCTIONS-paste-into-GPT.md` into
+Instructions, and upload the remaining files as Knowledge. Once built, a Custom GPT can be shared by link so
+others do not have to set anything up.
 
 ChatGPT's sandbox has no internet, so the `mediapipe` pose model usually cannot be installed there. The skill
 then runs in **motion-only mode**: the assistant picks the swings from a contact sheet by eye and annotates by
@@ -67,22 +75,22 @@ coordinates. You still get the full report, without measured angles and with som
 
 The skill follows the open [Agent Skills](https://agentskills.io) layout (`SKILL.md` + `scripts/` + `references/`),
 so any agent that can read a skill folder and run Python can use it (e.g. Codex CLI, Gemini CLI: copy
-`skill/rate-my-tennis/` into that tool's skills directory).
+`plugins/rate-my-tennis/skills/rate-my-tennis/` into that tool's skills directory).
 
 ### Run it by hand
 
 ```bash
 pip install mediapipe opencv-python-headless numpy pillow
-python skill/rate-my-tennis/scripts/analyze_video.py my_video.mov --out out
+python plugins/rate-my-tennis/skills/rate-my-tennis/scripts/analyze_video.py my_video.mov --out out
 # ... write out/report.json (see references/report-schema.md) ...
-python skill/rate-my-tennis/scripts/build_report.py out/report.json --analysis out --out out/report.html
+python plugins/rate-my-tennis/skills/rate-my-tennis/scripts/build_report.py out/report.json --analysis out --out out/report.html
 ```
 
 ## Recording tips
 
 Tripod or fence mount, landscape, whole body in frame, **behind the player** (add a side-on clip if you can),
 60 fps if available, sound on, 1–3 minutes, 8–10 repetitions of each stroke. Large files: trim or export at 720p.
-Full guide: [`references/recording-guide.md`](skill/rate-my-tennis/references/recording-guide.md).
+Full guide: [`references/recording-guide.md`](plugins/rate-my-tennis/skills/rate-my-tennis/references/recording-guide.md).
 
 ## Limits — please read
 
@@ -95,7 +103,10 @@ Full guide: [`references/recording-guide.md`](skill/rate-my-tennis/references/re
 ## Repository layout
 
 ```
-skill/rate-my-tennis/
+.claude-plugin/marketplace.json     Claude Code marketplace manifest
+plugins/rate-my-tennis/
+  .claude-plugin/plugin.json        plugin manifest
+  skills/rate-my-tennis/            the skill itself:
   SKILL.md                    workflow the assistant follows
   scripts/analyze_video.py    video -> swings, filmstrips, metrics
   scripts/summarize.py        per-stroke averages using the coach's labels
@@ -135,12 +146,13 @@ skill 的 AI 助手，它会像教练一样看完视频，给你一份图文并�
 
 报告是一个独立的 HTML 文件，可离线打开、可打印成 PDF。你用什么语言和助手说话，报告就用什么语言。
 
-**安装**：运行 `./scripts/package.sh` 后，
-- Claude：在 Settings → Capabilities → Skills 上传 `dist/rate-my-tennis.zip`（需开启代码执行）；Claude Code 则解压到
-  `~/.claude/skills/`。
-- ChatGPT：新建 Custom GPT 或 Project，开启 Code Interpreter，把 `dist/chatgpt-instructions.md` 粘贴到 Instructions，
-  把 `dist/chatgpt-knowledge/` 里的文件作为 Knowledge 上传。（ChatGPT 沙盒通常装不了姿态模型，会自动降级为“纯目测模式”，
-  仍能出完整报告，但没有角度数据。）
+**安装**：
+- Claude Code：一行命令 `/plugin install rate-my-tennis --marketplace dukesky/rate-my-tennis-skill`，或者直接把本仓库链接发给它让它安装。
+- Claude 聊天应用：不能通过链接安装。从 [最新 Release](https://github.com/dukesky/rate-my-tennis-skill/releases/latest) 下载
+  `rate-my-tennis.zip`，在 Settings → Capabilities → Skills 上传（需开启代码执行）。
+- ChatGPT：同样不能通过链接安装。下载 `rate-my-tennis-chatgpt.zip` 解压，新建 Custom GPT 或 Project，开启 Code Interpreter，
+  把 `INSTRUCTIONS-paste-into-GPT.md` 的内容粘贴到 Instructions，其余文件作为 Knowledge 上传。（ChatGPT 沙盒通常装不了姿态模型，
+  会自动降级为“纯目测模式”，仍能出完整报告，但没有角度数据。）
 
 **录像建议**：手机固定、横屏、全身入镜、从身后拍（有条件再加一段侧面）、尽量 60 帧、保留声音、1–3 分钟、每种击球 8–10 次。
 
