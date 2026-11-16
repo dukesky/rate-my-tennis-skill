@@ -1,0 +1,153 @@
+{
+  "lang": "en",
+  "date": "2026-11-09",
+  "session": "Wall practice · left-handed · two-handed backhand · camera behind",
+  "summary": "In three minutes at the wall you hit about 70 balls: forehands, two-handed backhands and a few serves. **A steady rhythm, eyes on the ball and a full turn on the forehand** are a solid base. What holds you back most is **bowing at the waist instead of bending the knees on low balls**, a **serve contact that is low and out to the side**, and a **forehand finish that stops too low**. Fix those three first.",
+  "overall_score": 58,
+  "level": {
+    "value": "NTRP 3.0",
+    "note": "range 2.5–3.0 · medium confidence (wall practice shows no placement)"
+  },
+  "dimensions": [
+    {"key": "preparation", "name": "Preparation", "score": 6.5, "comment": "Good shoulder turn and non-hitting arm on the forehand; on some backhands the racket only gets back as the ball arrives."},
+    {"key": "footwork", "name": "Footwork & balance", "score": 5.0, "comment": "Few adjusting steps, sometimes too close to the ball, and low balls are reached by bowing."},
+    {"key": "contact", "name": "Contact point", "score": 6.0, "comment": "Backhand contact is in front with both arms long. Forehand spacing varies: elbow anywhere from 84° to 146°."},
+    {"key": "swing", "name": "Swing path & finish", "score": 5.5, "comment": "Forehands are mostly level pushes that stop between waist and chest, with little low-to-high."},
+    {"key": "kinetic", "name": "Legs & rotation", "score": 5.0, "comment": "Plenty of turn, but the legs stay nearly straight, so the power comes from the arm and upper body."},
+    {"key": "serve", "name": "Serve", "score": 4.5, "comment": "Knees bend and the rhythm flows, but contact is low and off to the side: the arm swings out rather than up."},
+    {"key": "consistency", "name": "Consistency & rhythm", "score": 6.5, "comment": "One hit every 2.4 seconds and you can keep the rally going; a still head shows good ball-watching."}
+  ],
+  "strokes": [
+    {"type": "forehand", "name": "Forehand", "score": 62, "count": 9, "summary": "A full turn, and the swings where the spacing is right are very good. Spacing and the finish are what vary.",
+     "good": ["Non-hitting arm points at the ball, shoulders fully turned", "Arm long and racket face steady when the distance is right"],
+     "work_on": ["Cramped contact when the ball gets too close", "Finish stops at the waist; not enough brush up"]},
+    {"type": "backhand", "name": "Two-handed backhand", "score": 60, "count": 9, "summary": "Contact out in front with both arms extended makes this the most solid stroke in the video. Low balls and late preparation cost points.",
+     "good": ["Contact in front of the front foot", "Finish gets over the shoulder"],
+     "work_on": ["Straight legs and a bowed back on low balls", "Late take-back on some balls"]},
+    {"type": "serve", "name": "Serve", "score": 45, "count": 3, "summary": "Toss, knee bend and swing flow together. The problem is the contact point: only a little above the head and out to the side.",
+     "good": ["Knees bend before the hit", "Toss and swing are in rhythm"],
+     "work_on": ["Low contact with the arm about 45° off vertical", "Not enough upward reach"]}
+  ],
+  "strengths": [
+    {"title": "Backhand contact in front, both arms long", "detail": "At contact the ball is ahead of your front foot, both arms are nearly straight and your head is still. This is the most important part of a two-handed backhand and you already have it.",
+     "evidence": {"swing": 37, "frame": "contact", "caption": "At contact: ball in front of the body, both arms sent out.",
+       "marks": [{"type": "circle", "at": "right_wrist", "r": 0.2, "color": "good", "text": "contact in front"},
+                 {"type": "circle", "at": "head", "r": 0.2, "color": "good", "text": "head still"}]}},
+    {"title": "Forehand turn and non-hitting arm", "detail": "During the take-back your right hand reaches across toward the ball and your shoulders turn side-on, which leaves room to accelerate.",
+     "evidence": {"swing": 36, "frame": "backswing", "caption": "Set early: right hand forward, shoulders and hips turned.",
+       "marks": [{"type": "line", "from": "right_shoulder", "to": "right_wrist", "color": "good", "text": "off arm reaches forward"},
+                 {"type": "line", "from": "left_shoulder", "to": "right_shoulder", "color": "good"}]}},
+    {"title": "A relaxed, extended forehand when the spacing is right", "detail": "On this swing you are the right distance from the ball: the arm is naturally long and the racket goes through the ball. Getting to this distance every time is the next goal.",
+     "evidence": {"swing": 4, "frame": "contact", "caption": "Your own model answer: arm extended, body balanced.",
+       "marks": [{"type": "angle", "joint": "left_elbow", "color": "good", "text": "arm extended"}]}}
+  ],
+  "issues": [
+    {"id": "bend-knees", "title": "Bowing at the waist on low balls", "severity": "high", "stroke": "Forehand / backhand",
+     "metric": {"name": "Trunk lean at contact on low balls", "value": "25–33°", "target": "15° or less (get down with the knees)"},
+     "what": "When the ball is below your waist your **knees hardly bend**; you bow and drop the racket head to reach it. In this frame the trunk leans about 30° and both legs are close to straight.",
+     "why": "Bowing drops your head and eyes with it, puts your weight on your toes and lets the racket head hang, so low balls go into the net or fly long. Straight legs also means no power from the legs.",
+     "fix": "Swap the bow for a sit: keep your back tall and bend your knees as if sitting on a bar stool, so your **hips go down** and the handle reaches ball height. Then push up through the shot.",
+     "cue": "Sit, don't bow.",
+     "evidence": [
+       {"swing": 57, "frame": "contact", "caption": "Low backhand. Red is the posture now (bowed, legs straight); green shows the back upright and the hips lower.",
+        "marks": [{"type": "rotate", "pivot": "mid_hip", "chain": ["mid_shoulder", "head"], "deg": 22, "toward": "up", "text": "bowing about 30°", "target_text": "back tall"},
+                  {"type": "angle", "joint": "right_knee", "color": "bad", "text": "leg too straight"},
+                  {"type": "move", "point": "mid_hip", "dx": -0.1, "dy": 0.42, "text": "hips down"}]},
+       {"swing": 36, "frame": "contact", "caption": "Same thing on a low forehand: knee straight, reaching by bowing.",
+        "marks": [{"type": "angle", "joint": "left_knee", "color": "bad", "text": "leg too straight"},
+                  {"type": "move", "point": "mid_hip", "dx": 0, "dy": 0.4, "text": "sit lower"}]}
+     ],
+     "drills": [
+       {"name": "Wall-sit shadow swings", "how": "Back against a wall, thighs at about 45°, back flat. Make ten slow forehand and backhand swings and feel knees bent, back straight.", "dose": "3 sets of 10, daily"},
+       {"name": "Low-ball feeds", "how": "Hit softly so the ball comes back low. On every shot the handle must be below your knees with your back upright; if not, stop the ball and start again.", "dose": "5 minutes each session"}
+     ]},
+    {"id": "serve-contact", "title": "Serve contact is low and out to the side", "severity": "high", "stroke": "Serve",
+     "metric": {"name": "Hand height at contact", "value": "just above the head, arm about 45° off vertical", "target": "arm close to vertical, fully extended"},
+     "what": "At contact your hitting arm reaches **out to the side** (about 45° from vertical) and the ball is only a little above your head. You do bend your knees before the hit, which is good.",
+     "why": "Every 10 cm of contact height you give up shrinks the window over the net. A sideways swing is more of a sling: hard to hit down into the box, and harder on the shoulder.",
+     "fix": "Toss higher (a little above your fully raised racket) and closer to above your head, slightly in front. Then **reach up** and meet the ball at the top, with the arm nearly vertical and fully extended.",
+     "cue": "Toss higher, reach up.",
+     "evidence": [
+       {"swing": 22, "frame": "contact", "caption": "Red is the arm now (out to the side); green shows it reaching up. The contact point is much higher.",
+        "marks": [{"type": "rotate", "pivot": "left_shoulder", "chain": ["left_elbow", "left_wrist"], "deg": 32, "toward": "up", "text": "arm out to the side", "target_text": "reach up, higher contact"}]},
+       {"swing": 54, "frame": "contact", "offset": -12, "caption": "Before the hit you do load the knees. Keep that, and send the energy upward.",
+        "marks": [{"type": "angle", "joint": "left_knee", "color": "good", "text": "knees bent"},
+                  {"type": "arrow", "from": "mid_shoulder", "dx": 0, "dy": -0.6, "color": "good", "text": "drive up"}]}
+     ],
+     "drills": [
+       {"name": "Kneeling serves", "how": "Serve with your back knee on the ground. The ball only clears the net if you reach to full height and hit up.", "dose": "15 balls each session"},
+       {"name": "Toss to a target", "how": "Toss only: hold the racket up at full reach and freeze. The ball should peak at racket-head height and land about a foot in front of you.", "dose": "20 tosses daily"},
+       {"name": "Touch the mark", "how": "Find a mark on a wall or fence that your fully raised racket just reaches. Touch it before each serve, then hit the ball at that height.", "dose": "10 balls each session"}
+     ]},
+    {"id": "fh-finish", "title": "Forehand finish is too low, with little low-to-high", "severity": "med", "stroke": "Forehand",
+     "metric": {"name": "Hand height at the finish", "value": "between waist and chest", "target": "above the opposite shoulder"},
+     "what": "After most forehands the racket stops at waist or chest height; the swing travels almost level, like a push.",
+     "why": "A low-to-high path is what puts topspin on the ball. Topspin lets you clear the net higher and still bring the ball down in the court, so the same effort gives far more margin.",
+     "fix": "Let the racket head drop below the ball first, then keep swinging forward and up until **the back of your hand is by your right shoulder** (left-hander finishing to the right), elbow pointing forward.",
+     "cue": "Finish with the racket on your right shoulder.",
+     "evidence": [
+       {"swing": 67, "frame": "finish", "caption": "The finish stops at the waist now; the green arrow shows where it should end.",
+        "marks": [{"type": "circle", "at": "left_wrist", "r": 0.16, "color": "bad", "text": "finish too low"},
+                  {"type": "arrow", "from": "left_wrist", "to": "right_shoulder", "color": "good", "text": "finish over right shoulder"}]}
+     ],
+     "drills": [
+       {"name": "Touch-the-shoulder finish", "how": "After every forehand, freeze and check: hand by the right shoulder, elbow pointing forward. Twenty shadow swings first, then against the wall.", "dose": "20 shadow swings before each session"},
+       {"name": "Over the line", "how": "Mark a line 1.5 m up the wall. Every forehand must clear it and come down with topspin.", "dose": "3 sets of 10 in a row"}
+     ]},
+    {"id": "fh-spacing", "title": "Sometimes too close to the ball on the forehand", "severity": "med", "stroke": "Forehand",
+     "metric": {"name": "Elbow angle at contact (swing to swing)", "value": "84°–146°", "target": "steady, around 130–160°"},
+     "what": "On some balls the ball is already beside you, so you hit with the upper arm pinned and the elbow tightly bent. On others the spacing is right and the arm is long. The two alternate.",
+     "why": "A cramped arm shortens the swing and makes the racket face hard to control, so both power and direction vary. Consistent spacing is the first source of consistency.",
+     "fix": "Start adjusting with small steps the moment the ball leaves the wall. Aim to meet it **an arm plus a racket away**, to the side and in front. When in doubt, take half a step back.",
+     "cue": "Feet first, give the arm room.",
+     "evidence": [
+       {"swing": 26, "frame": "contact", "caption": "Jammed: elbow bent to about 85°, ball close to the body. Green shows the extension the arm should have.",
+        "marks": [{"type": "target_angle", "joint": "left_elbow", "target": 150, "text": "cramped, about 85°", "target_text": "make room"}]},
+       {"swing": 4, "frame": "contact", "caption": "For comparison: a swing at the right distance, arm naturally long.",
+        "marks": [{"type": "angle", "joint": "left_elbow", "color": "good", "text": "good spacing"}]}
+     ],
+     "drills": [
+       {"name": "Split step", "how": "Make a small hop every time the ball hits the wall, then adjust your feet as you land.", "dose": "Throughout every session"},
+       {"name": "Measure with a straight arm", "how": "No swing, just positioning: catch the ball on the strings with a straight arm so it meets the middle of the racket.", "dose": "20 balls"}
+     ]},
+    {"id": "bh-late", "title": "Late take-back on the two-handed backhand", "severity": "low", "stroke": "Two-handed backhand",
+     "metric": {"name": "Racket back to contact", "value": "0.13–0.23 s", "target": "0.4 s or more"},
+     "what": "On several balls the ball has already bounced toward you when the racket is only just getting back, and then it has to come forward straight away.",
+     "why": "A late take-back turns the swing into a rush: you can only muscle it with the arms, and contact drifts back.",
+     "fix": "The **moment** you read the ball to your backhand side, turn your shoulders with both hands on the racket. The turn is the take-back; you don't need a separate pull.",
+     "cue": "Ball leaves the wall, shoulders are turned.",
+     "evidence": [
+       {"swing": 57, "frame": "backswing", "caption": "Only about 0.13 s before contact: the ball is already here and the racket has just got back.",
+        "marks": [{"type": "circle", "at": "right_wrist", "r": 0.22, "color": "bad", "text": "racket only just back"},
+                  {"type": "circle", "at": [0.61, 0.82], "r": 0.14, "color": "info", "text": "ball already here"}]}
+     ],
+     "drills": [
+       {"name": "Turn-bounce-hit", "how": "Say \"turn\" when the ball hits the wall (your shoulder turn must be done by then), \"bounce\" when it lands, \"hit\" at contact.", "dose": "2 sets of 20"}
+     ]}
+  ],
+  "flipbooks": [
+    {"swing": 4, "caption": "Forehand at the right distance. Watch where the racket goes after contact."},
+    {"swing": 57, "caption": "Low two-handed backhand. Watch the knees and the back."},
+    {"swing": 22, "caption": "Serve. Watch how high the arm reaches at contact."}
+  ],
+  "plan": [
+    {"when": "Weeks 1–2", "focus": "Get lower", "tasks": ["Wall-sit shadow swings, 3 sets daily", "5 minutes of low balls at the wall: back tall, knees bent", "Split step on every ball"]},
+    {"when": "Weeks 3–4", "focus": "Serve contact point", "tasks": ["20 target tosses a day", "15 kneeling serves and 10 touch-the-mark serves", "Film your serve from the side and check the contact height"]},
+    {"when": "Weeks 5–6", "focus": "Topspin forehand finish", "tasks": ["20 touch-the-shoulder shadow swings", "Over the 1.5 m line: 10 in a row", "Record again from the same angle and compare with this report"]}
+  ],
+  "metrics_table": [
+    {"name": "Forehand elbow at contact", "value": "84–146° (mean about 124°)", "reference": "130–160° (extended style)", "note": "A large spread means the spacing varies"},
+    {"name": "Knee angle at contact (mean)", "value": "about 155°", "reference": "120–150°", "note": "Smaller means more knee bend"},
+    {"name": "Trunk lean on low balls", "value": "25–33°", "reference": "15° or less", "note": "Clearest on low backhands"},
+    {"name": "Serve contact height", "value": "hand 0.5–0.8 torso lengths above the shoulder", "reference": "1.0 or more (arm near vertical)", "note": "Contact low and to the side"},
+    {"name": "Forehand shoulder turn", "value": "about 110–170°", "reference": "90° or more", "note": "Plenty"},
+    {"name": "Head movement at contact", "value": "0.02–0.2 torso lengths", "reference": "0.25 or less", "note": "Steady ball-watching"},
+    {"name": "Hitting rhythm", "value": "2.4 s per hit", "reference": "—", "note": "About 70 hits in three minutes"}
+  ],
+  "next_recording_tips": [
+    "This was filmed **from behind**, which shows the turn and the finish well. Next time add a clip **from the side** (parallel to the baseline) to see how far in front contact is and how much the knees bend.",
+    "Put the camera at waist height on something steady, with the whole body including the feet in frame.",
+    "Record 8–10 serves on their own, from behind and to the hitting-arm side.",
+    "Record again from the same angle in 2–4 weeks and send this report's tennis-progress.json with it to see what changed."
+  ]
+}

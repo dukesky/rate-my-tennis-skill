@@ -1,0 +1,614 @@
+{
+ "tool": "rate-my-tennis",
+ "history": [
+  {
+   "date": "2026-11-15",
+   "session": "对墙练习 · 左手持拍 · 双手反拍",
+   "overall_score": 58,
+   "level": "NTRP 3.0",
+   "dimensions": [
+    {
+     "key": "preparation",
+     "name": "准备与引拍",
+     "score": 6.5
+    },
+    {
+     "key": "footwork",
+     "name": "步法与平衡",
+     "score": 5.0
+    },
+    {
+     "key": "contact",
+     "name": "击球点",
+     "score": 6.0
+    },
+    {
+     "key": "swing",
+     "name": "挥拍轨迹与随挥",
+     "score": 5.5
+    },
+    {
+     "key": "kinetic",
+     "name": "下肢与转体发力",
+     "score": 5.0
+    },
+    {
+     "key": "serve",
+     "name": "发球",
+     "score": 4.5
+    },
+    {
+     "key": "consistency",
+     "name": "稳定性与节奏",
+     "score": 6.5
+    }
+   ],
+   "strokes": [
+    {
+     "type": "forehand",
+     "name": "正手",
+     "score": 62
+    },
+    {
+     "type": "backhand",
+     "name": "双手反拍",
+     "score": 60
+    },
+    {
+     "type": "serve",
+     "name": "发球",
+     "score": 45
+    }
+   ],
+   "issues": [
+    {
+     "title": "低球时弯腰、腿是直的",
+     "severity": "high",
+     "stroke": "正手 / 反拍",
+     "metric": {
+      "name": "低球触球时上身前倾",
+      "value": "25–33°",
+      "target": "≤ 15°（靠屈膝降重心）"
+     }
+    },
+    {
+     "title": "发球击球点偏低、偏外侧",
+     "severity": "high",
+     "stroke": "发球",
+     "metric": {
+      "name": "触球时手的高度",
+      "value": "略高于头顶，手臂斜约 45°",
+      "target": "手臂接近竖直、完全伸展"
+     }
+    },
+    {
+     "title": "正手收拍偏低，缺少由低到高",
+     "severity": "med",
+     "stroke": "正手",
+     "metric": {
+      "name": "收拍时手的高度（相对肩）",
+      "value": "腰–胸之间",
+      "target": "对侧肩膀上方"
+     }
+    },
+    {
+     "title": "正手有时离球太近，被“顶”住",
+     "severity": "med",
+     "stroke": "正手",
+     "metric": {
+      "name": "触球时肘角度（各拍波动）",
+      "value": "84°–146°",
+      "target": "稳定在 130–160°"
+     }
+    },
+    {
+     "title": "双反引拍偏晚",
+     "severity": "low",
+     "stroke": "双手反拍",
+     "metric": {
+      "name": "引拍到位 → 触球的时间",
+      "value": "0.13–0.23 秒",
+      "target": "≥ 0.4 秒"
+     }
+    }
+   ],
+   "aggregate_metrics": {
+    "forehand": {
+     "count": 10,
+     "elbow_angle_contact": {
+      "mean": 123.56,
+      "sd": 18.62,
+      "min": 86.8,
+      "max": 146.3
+     },
+     "elbow_angle_backswing": {
+      "mean": 125.73,
+      "sd": 22.73,
+      "min": 84.7,
+      "max": 156.5
+     },
+     "off_arm_elbow_backswing": {
+      "mean": 137.73,
+      "sd": 13.37,
+      "min": 116.0,
+      "max": 154.0
+     },
+     "knee_min_hitting_side": {
+      "mean": 130.83,
+      "sd": 9.26,
+      "min": 110.9,
+      "max": 148.9
+     },
+     "knee_min_other_side": {
+      "mean": 133.69,
+      "sd": 14.73,
+      "min": 93.9,
+      "max": 147.6
+     },
+     "knee_at_contact_avg": {
+      "mean": 145.82,
+      "sd": 12.97,
+      "min": 120.2,
+      "max": 166.6
+     },
+     "hip_shoulder_separation_max": {
+      "mean": 22.78,
+      "sd": 6.92,
+      "min": 13.1,
+      "max": 37.1
+     },
+     "shoulder_rotation_range": {
+      "mean": 124.56,
+      "sd": 36.36,
+      "min": 66.4,
+      "max": 176.0
+     },
+     "contact_height": {
+      "mean": 0.58,
+      "sd": 0.5,
+      "min": -0.52,
+      "max": 1.11
+     },
+     "contact_side_reach": {
+      "mean": 0.84,
+      "sd": 0.41,
+      "min": 0.11,
+      "max": 1.43
+     },
+     "stance_width": {
+      "mean": 0.91,
+      "sd": 0.42,
+      "min": 0.37,
+      "max": 1.74
+     },
+     "trunk_lean_deg": {
+      "mean": 7.44,
+      "sd": 6.65,
+      "min": 0.0,
+      "max": 18.2
+     },
+     "head_movement": {
+      "mean": 0.17,
+      "sd": 0.09,
+      "min": 0.02,
+      "max": 0.34
+     },
+     "finish_height": {
+      "mean": 0.09,
+      "sd": 0.32,
+      "min": -0.84,
+      "max": 0.42
+     },
+     "peak_hand_speed": {
+      "mean": 12.88,
+      "sd": 1.76,
+      "min": 10.0,
+      "max": 15.9
+     },
+     "backswing_to_contact_s": {
+      "mean": 0.41,
+      "sd": 0.13,
+      "min": 0.27,
+      "max": 0.67
+     }
+    },
+    "backhand_two_handed": {
+     "count": 4,
+     "elbow_angle_contact": {
+      "mean": 123.98,
+      "sd": 14.68,
+      "min": 100.1,
+      "max": 136.7
+     },
+     "elbow_angle_backswing": {
+      "mean": 137.82,
+      "sd": 5.13,
+      "min": 130.1,
+      "max": 143.0
+     },
+     "off_arm_elbow_backswing": {
+      "mean": 133.78,
+      "sd": 8.96,
+      "min": 119.1,
+      "max": 143.4
+     },
+     "knee_min_hitting_side": {
+      "mean": 143.75,
+      "sd": 13.99,
+      "min": 121.3,
+      "max": 159.5
+     },
+     "knee_min_other_side": {
+      "mean": 107.62,
+      "sd": 41.84,
+      "min": 38.4,
+      "max": 146.3
+     },
+     "knee_at_contact_avg": {
+      "mean": 165.1,
+      "sd": 3.71,
+      "min": 160.3,
+      "max": 169.5
+     },
+     "hip_shoulder_separation_max": {
+      "mean": 21.8,
+      "sd": 4.69,
+      "min": 14.8,
+      "max": 26.6
+     },
+     "shoulder_rotation_range": {
+      "mean": 112.72,
+      "sd": 35.7,
+      "min": 52.2,
+      "max": 139.6
+     },
+     "contact_height": {
+      "mean": 0.2,
+      "sd": 0.18,
+      "min": -0.03,
+      "max": 0.41
+     },
+     "contact_side_reach": {
+      "mean": 0.48,
+      "sd": 0.19,
+      "min": 0.24,
+      "max": 0.73
+     },
+     "stance_width": {
+      "mean": 0.91,
+      "sd": 0.24,
+      "min": 0.53,
+      "max": 1.15
+     },
+     "trunk_lean_deg": {
+      "mean": 16.4,
+      "sd": 9.63,
+      "min": 4.8,
+      "max": 31.5
+     },
+     "head_movement": {
+      "mean": 0.2,
+      "sd": 0.06,
+      "min": 0.15,
+      "max": 0.31
+     },
+     "finish_height": {
+      "mean": 0.06,
+      "sd": 0.12,
+      "min": -0.12,
+      "max": 0.17
+     },
+     "peak_hand_speed": {
+      "mean": 11.35,
+      "sd": 3.18,
+      "min": 7.6,
+      "max": 16.4
+     },
+     "backswing_to_contact_s": {
+      "mean": 0.24,
+      "sd": 0.19,
+      "min": 0.13,
+      "max": 0.57
+     }
+    },
+    "backhand": {
+     "count": 5,
+     "elbow_angle_contact": {
+      "mean": 138.64,
+      "sd": 7.8,
+      "min": 129.0,
+      "max": 148.4
+     },
+     "elbow_angle_backswing": {
+      "mean": 133.94,
+      "sd": 8.02,
+      "min": 120.9,
+      "max": 143.1
+     },
+     "off_arm_elbow_backswing": {
+      "mean": 138.64,
+      "sd": 8.17,
+      "min": 123.9,
+      "max": 146.4
+     },
+     "knee_min_hitting_side": {
+      "mean": 143.32,
+      "sd": 8.57,
+      "min": 129.6,
+      "max": 153.9
+     },
+     "knee_min_other_side": {
+      "mean": 131.82,
+      "sd": 27.23,
+      "min": 78.1,
+      "max": 150.6
+     },
+     "knee_at_contact_avg": {
+      "mean": 159.72,
+      "sd": 2.2,
+      "min": 157.8,
+      "max": 163.9
+     },
+     "hip_shoulder_separation_max": {
+      "mean": 18.54,
+      "sd": 3.45,
+      "min": 12.8,
+      "max": 22.3
+     },
+     "shoulder_rotation_range": {
+      "mean": 121.9,
+      "sd": 18.76,
+      "min": 94.8,
+      "max": 142.6
+     },
+     "contact_height": {
+      "mean": 0.18,
+      "sd": 0.2,
+      "min": -0.12,
+      "max": 0.44
+     },
+     "contact_side_reach": {
+      "mean": 0.35,
+      "sd": 0.1,
+      "min": 0.22,
+      "max": 0.47
+     },
+     "stance_width": {
+      "mean": 1.09,
+      "sd": 0.25,
+      "min": 0.72,
+      "max": 1.37
+     },
+     "trunk_lean_deg": {
+      "mean": 26.22,
+      "sd": 7.67,
+      "min": 11.9,
+      "max": 33.3
+     },
+     "head_movement": {
+      "mean": 0.13,
+      "sd": 0.02,
+      "min": 0.1,
+      "max": 0.16
+     },
+     "finish_height": {
+      "mean": 0.14,
+      "sd": 0.09,
+      "min": 0.04,
+      "max": 0.29
+     },
+     "peak_hand_speed": {
+      "mean": 13.76,
+      "sd": 2.94,
+      "min": 10.4,
+      "max": 17.6
+     },
+     "backswing_to_contact_s": {
+      "mean": 0.21,
+      "sd": 0.05,
+      "min": 0.13,
+      "max": 0.3
+     }
+    },
+    "soft_touch": {
+     "count": 2,
+     "elbow_angle_contact": {
+      "mean": 137.4,
+      "sd": 9.4,
+      "min": 128.0,
+      "max": 146.8
+     },
+     "elbow_angle_backswing": {
+      "mean": 136.0,
+      "sd": 25.7,
+      "min": 110.3,
+      "max": 161.7
+     },
+     "off_arm_elbow_backswing": {
+      "mean": 141.25,
+      "sd": 1.95,
+      "min": 139.3,
+      "max": 143.2
+     },
+     "knee_min_hitting_side": {
+      "mean": 150.95,
+      "sd": 3.15,
+      "min": 147.8,
+      "max": 154.1
+     },
+     "knee_min_other_side": {
+      "mean": 135.45,
+      "sd": 24.15,
+      "min": 111.3,
+      "max": 159.6
+     },
+     "knee_at_contact_avg": {
+      "mean": 163.05,
+      "sd": 2.25,
+      "min": 160.8,
+      "max": 165.3
+     },
+     "hip_shoulder_separation_max": {
+      "mean": 14.5,
+      "sd": 4.2,
+      "min": 10.3,
+      "max": 18.7
+     },
+     "shoulder_rotation_range": {
+      "mean": 2.45,
+      "sd": 1.05,
+      "min": 1.4,
+      "max": 3.5
+     },
+     "contact_height": {
+      "mean": 0.1,
+      "sd": 0.06,
+      "min": 0.04,
+      "max": 0.16
+     },
+     "contact_side_reach": {
+      "mean": 0.48,
+      "sd": 0.01,
+      "min": 0.48,
+      "max": 0.49
+     },
+     "stance_width": {
+      "mean": 1.11,
+      "sd": 0.34,
+      "min": 0.77,
+      "max": 1.46
+     },
+     "trunk_lean_deg": {
+      "mean": 16.35,
+      "sd": 3.45,
+      "min": 12.9,
+      "max": 19.8
+     },
+     "head_movement": {
+      "mean": 0.18,
+      "sd": 0.14,
+      "min": 0.05,
+      "max": 0.32
+     },
+     "finish_height": {
+      "mean": -0.65,
+      "sd": 0.11,
+      "min": -0.76,
+      "max": -0.53
+     },
+     "peak_hand_speed": {
+      "mean": 3.6,
+      "sd": 0.9,
+      "min": 2.7,
+      "max": 4.5
+     },
+     "backswing_to_contact_s": {
+      "mean": 0.38,
+      "sd": 0.25,
+      "min": 0.13,
+      "max": 0.63
+     }
+    },
+    "serve_or_overhead": {
+     "count": 3,
+     "elbow_angle_contact": {
+      "mean": 139.77,
+      "sd": 4.67,
+      "min": 133.5,
+      "max": 144.7
+     },
+     "elbow_angle_backswing": {
+      "mean": 128.57,
+      "sd": 11.34,
+      "min": 120.1,
+      "max": 144.6
+     },
+     "off_arm_elbow_backswing": {
+      "mean": 150.0,
+      "sd": 2.12,
+      "min": 148.5,
+      "max": 153.0
+     },
+     "knee_min_hitting_side": {
+      "mean": 125.37,
+      "sd": 6.49,
+      "min": 116.7,
+      "max": 132.3
+     },
+     "knee_min_other_side": {
+      "mean": 133.73,
+      "sd": 0.7,
+      "min": 132.8,
+      "max": 134.5
+     },
+     "knee_at_contact_avg": {
+      "mean": 142.17,
+      "sd": 6.82,
+      "min": 134.4,
+      "max": 151.0
+     },
+     "hip_shoulder_separation_max": {
+      "mean": 16.13,
+      "sd": 1.52,
+      "min": 14.4,
+      "max": 18.1
+     },
+     "shoulder_rotation_range": {
+      "mean": 106.0,
+      "sd": 5.24,
+      "min": 100.6,
+      "max": 113.1
+     },
+     "contact_height": {
+      "mean": 1.69,
+      "sd": 0.12,
+      "min": 1.55,
+      "max": 1.84
+     },
+     "contact_side_reach": {
+      "mean": 1.15,
+      "sd": 0.17,
+      "min": 0.92,
+      "max": 1.3
+     },
+     "stance_width": {
+      "mean": 0.81,
+      "sd": 0.17,
+      "min": 0.58,
+      "max": 0.97
+     },
+     "trunk_lean_deg": {
+      "mean": 12.63,
+      "sd": 1.31,
+      "min": 11.1,
+      "max": 14.3
+     },
+     "head_movement": {
+      "mean": 0.17,
+      "sd": 0.0,
+      "min": 0.17,
+      "max": 0.18
+     },
+     "finish_height": {
+      "mean": 0.33,
+      "sd": 0.16,
+      "min": 0.13,
+      "max": 0.51
+     },
+     "peak_hand_speed": {
+      "mean": 9.2,
+      "sd": 1.4,
+      "min": 7.6,
+      "max": 11.0
+     },
+     "backswing_to_contact_s": {
+      "mean": 0.5,
+      "sd": 0.09,
+      "min": 0.43,
+      "max": 0.63
+     }
+    }
+   }
+  }
+ ]
+}

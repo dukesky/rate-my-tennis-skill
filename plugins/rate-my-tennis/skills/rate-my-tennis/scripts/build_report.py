@@ -327,7 +327,7 @@ def prims_to_svg(prims, T, w, h, lm=None, skeleton=False, view=None):
     return "".join(o)
 
 
-def bake(img, prims, T):
+def bake(img, prims, T, view=None):
     """Draw primitives into the image (static version: ghosts at their target). ASCII-safe text only."""
     def col(c):
         c = c.lstrip("#")
@@ -382,7 +382,7 @@ def bake(img, prims, T):
                 text(p["b"] + np.array([0, -p["r"] - 0.08 * T]), p["text"], c)
         elif k == "text":
             text(p["p"], p["text"], c)
-    return draw_labels(out, labels, T)
+    return draw_labels(out, labels, T, view)
 
 
 FONT_PATHS = [
@@ -395,7 +395,7 @@ FONT_PATHS = [
 ]
 
 
-def draw_labels(img, labels, T):
+def draw_labels(img, labels, T, view=None):
     """Text for baked stills. Uses Pillow + a system font when possible; non-renderable text is skipped."""
     if not labels:
         return img
@@ -418,13 +418,14 @@ def draw_labels(img, labels, T):
         for p, s, c in labels:
             l, t, r, b = d.textbbox((0, 0), s, font=font)
             tw, th = r - l + size * 0.7, size * 1.45
-            x = min(max(p[0], tw / 2 + 3), pil.width - tw / 2 - 3)
-            y = min(max(p[1], th + 2), pil.height - 6)
+            vx0, vy0, vx1, vy1 = view or (0, 0, pil.width, pil.height)
+            x = min(max(p[0], vx0 + tw / 2 + 3), vx1 - tw / 2 - 3)
+            y = min(max(p[1], vy0 + th + 2), vy1 - 6)
             for _ in range(12):
                 hit = [q for q in placed if abs(q[0] - x) < (q[2] + tw) / 2 and abs(q[1] - y) < th * 1.02]
                 if not hit:
                     break
-                y = hit[0][1] + th * 1.08 if y + th * 1.1 < pil.height - 6 else hit[0][1] - th * 1.08
+                y = hit[0][1] + th * 1.08 if y + th * 1.1 < vy1 - 6 else hit[0][1] - th * 1.08
             placed.append((x, y, tw))
             d.rounded_rectangle([x - tw / 2, y - th * 0.76, x + tw / 2, y + th * 0.24], radius=th * 0.3, fill=(12, 20, 16, 200))
             d.text((x, y - th * 0.26), s, font=font, fill=(c[2], c[1], c[0]), anchor="mm")
@@ -483,7 +484,7 @@ def render_evidence(an, ev, L, export=None):
         prims, T = marks_to_prims(ev.get("marks"), lm, w, h)
     except (ValueError, KeyError) as e:
         sys.exit("ERROR in marks for swing %s frame %s: %s" % (sid, ev.get("frame"), e))
-    baked = bake(img, prims, T) if export else None
+    full = img
     box = [0, 0, w, h]
     if ev.get("zoom"):
         x1, y1, x2, y2 = ev["zoom"]
@@ -494,7 +495,7 @@ def render_evidence(an, ev, L, export=None):
     vb = (box[0], box[1], box[2] - box[0], box[3] - box[1])
     img = img[box[1]:box[3], box[0]:box[2]]
     if export:
-        cv2.imwrite(export, baked[box[1]:box[3], box[0]:box[2]], [cv2.IMWRITE_JPEG_QUALITY, 88])
+        cv2.imwrite(export, bake(full, prims, T, box)[box[1]:box[3], box[0]:box[2]], [cv2.IMWRITE_JPEG_QUALITY, 88])
     svg = prims_to_svg(prims, T, w, h, lm, ev.get("skeleton", False), box)
     svg = svg.replace('viewBox="0 0 %d %d"' % (w, h), 'viewBox="%d %d %d %d"' % vb, 1)
     animated = any(p["k"].startswith("ghost") for p in prims)
