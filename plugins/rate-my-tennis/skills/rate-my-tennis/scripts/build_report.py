@@ -554,8 +554,19 @@ def radar_svg(dims, prev=None):
         o.append('<line x1="%d" y1="%d" x2="%.1f" y2="%.1f" class="spoke"/>' % (cx, cy, x, y))
         lx, ly = pt(i, 12.6)
         anchor = "middle" if abs(lx - cx) < 30 else ("start" if lx > cx else "end")
-        o.append('<text x="%.1f" y="%.1f" text-anchor="%s" class="rl">%s</text>' % (lx, ly - 3, anchor, esc(d["name"])))
-        o.append('<text x="%.1f" y="%.1f" text-anchor="%s" class="rv">%s</text>' % (lx, ly + 15, anchor, fmt(d["score"])))
+        name = str(d["name"])
+        # Long side labels (English) would run off the chart: wrap them onto two lines.
+        width = sum(14.5 if ord(ch) > 0x2E7F else 7.8 for ch in name)
+        over = (anchor == "start" and lx + width > 392) or (anchor == "end" and lx - width < -52)
+        lines = [name]
+        if over and " " in name.strip():
+            words = name.split()
+            k = min(range(1, len(words)), key=lambda j: abs(len(" ".join(words[:j])) - len(" ".join(words[j:]))))
+            lines = [" ".join(words[:k]), " ".join(words[k:])]
+        y0 = ly - 3 - 8 * (len(lines) - 1)
+        for j, ln in enumerate(lines):
+            o.append('<text x="%.1f" y="%.1f" text-anchor="%s" class="rl">%s</text>' % (lx, y0 + 17 * j, anchor, esc(ln)))
+        o.append('<text x="%.1f" y="%.1f" text-anchor="%s" class="rv">%s</text>' % (lx, y0 + 17 * (len(lines) - 1) + 18, anchor, fmt(d["score"])))
     if prev:
         pm = {p.get("key"): p.get("score") for p in prev}
         if all(d.get("key") in pm for d in dims):
